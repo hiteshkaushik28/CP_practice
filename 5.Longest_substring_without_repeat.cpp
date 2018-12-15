@@ -6,7 +6,7 @@
 
 /* The idea is to maintain a variable which holds the starting point of the current window. We also maintain a dictionary of 256
  * items (we have 256 chars in ASCII), where we store the latest position of the current character while traversing the input 
- * string. As soon as we see that we have seen current character before, we change the starting point of the wondow to the 
+ * string. As soon as we see that we have seen current character before, we change the starting point of the window to the 
  * immediate next position of the stored position. Also, we keep on updating the max length of the answer.
  */
 
@@ -23,8 +23,8 @@
 
     int _max = 0; // stores the answer
     int start = -1; // stores the starting point of the sliding window
-    int dict[256];
-    memset(dict, -1, sizeof(dict)); // stores the last seen index of a character in the input string
+    int dict[256]; // stores the last seen index of a character in the input string 
+    memset(dict, -1, sizeof(dict));
 
     for(int i = 0; i < len; ++i)
     {
