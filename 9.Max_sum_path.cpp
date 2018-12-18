@@ -16,10 +16,11 @@ public:
     {
         if(!root)
             return 0;
-        int left = maxsum(root->left, ans);
-        int right = maxsum(root->right, ans);
-        int temp1 = max(root->val, max(left, right) + root->val);
-        int temp2 = max(temp1, root->val + left + right);
+        int left = maxsum(root->left, ans); // recursively calculate the sum of left subtree
+        int right = maxsum(root->right, ans); // recursively calculate the sum of righ subtree
+        int temp1 = max(root->val, max(left, right) + root->val); // value that will be returned to parent
+        int temp2 = max(temp1, root->val + left + right); // decide if this subtree has max path or it is also a part of some
+                                                          // path.
         ans = max(ans, temp2);
         return temp1;
     }
