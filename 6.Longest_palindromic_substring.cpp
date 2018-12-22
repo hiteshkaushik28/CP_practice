@@ -30,7 +30,7 @@ public:
             start = left;
         }
         
-        return s.substr(left, max_len);
+        return s.substr(start, max_len);
     
     }
 
