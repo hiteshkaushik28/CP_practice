@@ -12,7 +12,7 @@ public:
     for(int i = 0; i < len; ++i)
     {
         int left = i, right = i;
-        while(s[++right] == s[left]) // skip duplicate elements (an important step)
+        while(s[right+1] == s[left]) // skip duplicate elements (an important step)
         {
             ++right;
             ++i;
